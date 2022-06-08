@@ -1,8 +1,9 @@
 <?php 
-    $host = 'localhost:443';
+    $host = 'localhost';
     $dbuser = 'root';
     $dbpassword = 'root';
-    $dbname = 'bootsrapsandbox';
-
+    $dbname = 'bootstrapsandbox';
     
+    $conn = mysqli_connect($host,$dbuser,$dbpassword,$dbname);  
+
 ?>
