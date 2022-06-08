@@ -1,0 +1,8 @@
+.bg-header{
+    background-color: rgb(32, 32, 32);
+    
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: green!important;
+  }
