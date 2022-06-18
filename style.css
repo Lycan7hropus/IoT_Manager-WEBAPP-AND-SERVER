@@ -3,6 +3,16 @@
     
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: green!important;
-  }
+
+
+.measure-card{
+    background-color: rgb(32, 32, 32) !important;
+}
+
+#mycard{
+    background-color: rgb(32, 32, 32) !important;
+}
+
+.test{
+    background-color: red;
+}

@@ -75,29 +75,10 @@ for ($i = 0; $i < 1000; $i++) {
 
     <div style="height: 100px;"></div>
 
-    <div style="width:96%; margin-left:auto; margin-right:auto;">
-        <div class="row justify-content-center ">
-            <div class="m-2 col-md-8 col-lg-6 col-xl-4 card p-2 shadow-sm">
-                <div class="myChart" id="TempChart">
-                    <div id="chartContainerTemp" style="height: 333px; width: 100%;"></div>
-                </div>
-            </div>
-            <div class="m-2 col-md-8 col-lg-6 col-xl-4 card p-2 shadow-sm">
-                <div class="myChart" id="TempChart">
-                    <div id="chartContainerHum" style="height: 333px; width: 100%;"></div>
-                </div>
-            </div>
-            <div class="m-2 col-md-8 col-lg-6 col-xl-4 card p-2 shadow-sm">
-                <div class="myChart" id="TempChart">
-                    <div id="chartContainerPres" style="height: 333px; width: 100%; "></div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
+    <?php include_once("components/comp_defpage.php"); //include_once("components/comp_charts.php"); ?>
 
-
-
-
+    <div class="test">hej</div>
 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
