@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -12,8 +17,9 @@
 <body>
 
 
-    <?php session_start();
-    require("header.php"); ?>
+    <?php
+        require("header.php");
+    ?>
 
     <main>
         <div class="row justify-content-center mx-3">
@@ -73,20 +79,27 @@
                             </div>
                         </div>
                         <?php if (isset($_SESSION['e_terms'])) {
-                                    echo '<div class="text-danger d-flex  justify-content-center">' . $_SESSION['e_terms'] . '</div>';
-                                    unset($_SESSION['e_terms']);
-                                }  ?>
+                            echo '<div class="text-danger d-flex  justify-content-center">' . $_SESSION['e_terms'] . '</div>';
+                            unset($_SESSION['e_terms']);
+                        }  ?>
                     </div>
 
                     <!-- Submit button -->
                     <input type="submit" id="submit_input" name="submit" value="Register" class="btn btn-dark btn-block mb-4">
 
-                    <!-- Register buttons -->
+                    <!-- Login -->
                     <div class="text-center">
                         <p>Already registered? <a href="login.php">Login</a></p>
                     </div>
+
                 </form>
             </div>
     </main>
 
-    <?php require("footer.php"); ?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+<?php require("footer.php"); ?>
+
+</html>

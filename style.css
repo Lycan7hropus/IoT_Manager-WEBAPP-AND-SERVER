@@ -2,17 +2,22 @@
     background-color: rgb(32, 32, 32);
     
 }
-
-
-
 .measure-card{
-    background-color: rgb(32, 32, 32) !important;
+    background-color: rgb(255, 255, 255) !important;
 }
 
-#mycard{
-    background-color: rgb(32, 32, 32) !important;
+.measure-name{
+    color: rgb(109, 109, 109) !important;
 }
 
-.test{
-    background-color: red;
+.measure-card:hover{
+    background-color: rgb(32, 32, 32) !important;
+    color: white;
+    transition-duration: 0.2s;
+}
+
+
+.myChartCard:hover{
+    box-shadow: 0px 0px 47px 0px rgba(200, 200, 200, 1) !important;
+    transition-duration: 0.2s;
 }

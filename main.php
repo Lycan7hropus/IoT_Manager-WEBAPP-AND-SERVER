@@ -1,11 +1,11 @@
 <?php
+session_start();
 
-$dataPoints = array();
-$y = 40;
-for ($i = 0; $i < 1000; $i++) {
-    $y += rand(0, 10) - 5;
-    array_push($dataPoints, array("x" => $i, "y" => $y));
+if(!isset($_SESSION['logged_in'])){
+ echo "sign in first!";
+ exit();   
 }
+
 
 ?>
 
@@ -19,53 +19,6 @@ for ($i = 0; $i < 1000; $i++) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <script>
-        window.onload = function() {
-
-            var chart1 = new CanvasJS.Chart("chartContainerTemp", {
-                theme: "light2", // "light1", "light2", "dark1", "dark2"
-                animationEnabled: true,
-                zoomEnabled: true,
-                title: {
-                    text: "Try Zooming and Panning"
-                },
-                data: [{
-                    type: "area",
-                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            chart1.render();
-
-            var chart2 = new CanvasJS.Chart("chartContainerHum", {
-                theme: "light2", // "light1", "light2", "dark1", "dark2"
-                animationEnabled: true,
-                zoomEnabled: true,
-                title: {
-                    text: "Try Zooming and Panning"
-                },
-                data: [{
-                    type: "area",
-                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            chart2.render();
-
-            var chart3 = new CanvasJS.Chart("chartContainerPres", {
-                theme: "light2", // "light1", "light2", "dark1", "dark2"
-                animationEnabled: true,
-                zoomEnabled: true,
-                title: {
-                    text: "Try Zooming and Panning"
-                },
-                data: [{
-                    type: "area",
-                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            chart3.render();
-
-        }
-    </script>
 
 </head>
 
@@ -75,11 +28,14 @@ for ($i = 0; $i < 1000; $i++) {
 
     <div style="height: 100px;"></div>
 
-   
-    <?php include_once("components/comp_defpage.php"); //include_once("components/comp_charts.php"); ?>
 
-    <div class="test">hej</div>
-
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <?php 
+        include "components/comp_main.php";
+    ?>
 
     <?php require("footer.php"); ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -102,4 +102,6 @@ if (isset($result)) {
     }
 }
 $conn->close();
-//header("Location: ../register.php");
+header("Location: ../register.php");
+
+?>
