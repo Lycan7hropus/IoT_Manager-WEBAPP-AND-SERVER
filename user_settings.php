@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['logged_in'])){
- echo "sign in first!";
- exit();   
+if (!isset($_SESSION['logged_in'])) {
+    echo "sign in first!";
+    exit();
 }
 
 
@@ -26,10 +26,12 @@ if(!isset($_SESSION['logged_in'])){
 
     <?php require("components/header_logged_in.php"); ?>
 
-    <div style="height: 100px;"></div>
+    <div style="height: 56px;"></div>
+
+ 
 
 
-   
+    <?php include("components/comp_user_settings.php"); ?>
 
     <?php require("components/footer.php"); ?>
 

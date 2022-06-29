@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['logged_in'])){
- echo "sign in first!";
- exit();   
+if (!isset($_SESSION['logged_in'])) {
+    echo "sign in first!";
+    exit();
 }
 
 $dataPoints = array();
@@ -24,6 +24,8 @@ for ($i = 0; $i < 1000; $i++) {
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    
 
     <script>
         window.onload = function() {
@@ -82,15 +84,15 @@ for ($i = 0; $i < 1000; $i++) {
     <div style="height: 100px;"></div>
 
 
-    <?php 
-    include_once("components/comp_defpage.php"); 
-    include_once("components/comp_charts.php"); 
+    <?php
+    include_once("components/comp_defpage.php");
+    include_once("components/comp_charts.php");
     ?>
 
-  
+
 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        
+
 
 
     <?php require("components/footer.php"); ?>

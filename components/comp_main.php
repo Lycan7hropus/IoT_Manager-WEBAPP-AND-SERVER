@@ -50,7 +50,7 @@
                         <div class="col-11 col-md-8 col-lg-4 my-2">
                             <div class="card h-100">
                             <button name="mysubmitbutton" id="mysubmitbutton" type="submit" class="measure-card rounded-3 p-3 m-2 h-100 border-0 text-start" value="Outdoor">
-                                    <span class="d-block h3">Outdoor</span>
+                                    <span class="d-block h3">Add new sensor</span>
                                 </button>
                             </div>
                         </div>
