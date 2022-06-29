@@ -29,9 +29,7 @@ if(!isset($_SESSION['logged_in'])){
     <div style="height: 100px;"></div>
 
 
-    <?php 
-        include "components/comp_main.php";
-    ?>
+   
 
     <?php require("components/footer.php"); ?>
 

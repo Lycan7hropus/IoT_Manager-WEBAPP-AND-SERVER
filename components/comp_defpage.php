@@ -1,10 +1,12 @@
-
+<?php if (!isset($_SESSION)) {
+    session_start();
+} ?>
 
 <div style="width:100%; margin-left:auto; margin-right:auto;">
     <div class="row justify-content-center">
         <div class="col-11 col-md-8 ">
-            <h1><?php echo "Hello " . $_SESSION['user_login']; ?></h1>
-            <h1>All measurements</h1>
+            <h6><?php echo "Hello " . $_SESSION['user_login']; ?></h6>
+            <h1><?php echo $_SESSION['sensor_name']; ?> readings</h1>
         </div>
     </div>
 
@@ -25,7 +27,7 @@
                     <span class=" d-block h4 measure-name">Pressure </span>
                     <span class=" d-block h3">1122</span>
                 </div>
-                
+
 
 
             </div>

@@ -77,7 +77,7 @@ for ($i = 0; $i < 1000; $i++) {
 
 <body>
 
-    <?php require("header_logged_in.php"); ?>
+    <?php require("components/header_logged_in.php"); ?>
 
     <div style="height: 100px;"></div>
 
@@ -93,7 +93,7 @@ for ($i = 0; $i < 1000; $i++) {
         
 
 
-    <?php require("footer.php"); ?>
+    <?php require("components/footer.php"); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
