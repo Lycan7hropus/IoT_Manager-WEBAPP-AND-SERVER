@@ -1,10 +1,64 @@
 <?php
 session_start();
+include("config/dbconfig.php");
 
 if (!isset($_SESSION['logged_in'])) {
     echo "sign in first!";
     exit();
 }
+
+
+$sql = 'SELECT sensor_id FROM sensors WHERE sensor_name = "'.$_SESSION["sensor_name"].'" AND user_login = "' . $_SESSION['user_login'] .'"';
+if ($sqlResult = $conn->query($sql)) {
+    $rows = $sqlResult->num_rows;
+    if ($rows > 0) {
+        //echo "$rows wierszy";
+        $wiersz = mysqli_fetch_assoc($sqlResult);
+        //print_r($wiersz);
+        //exit();
+        $sensor_id = $wiersz["sensor_id"];
+
+
+        $sqlResult->free();
+    } else {
+        //echo "zero wierszy";
+        //print_r($sqlResult);
+        //exit();
+    }
+}else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    exit();
+}
+
+
+$sql = "SELECT temp,hum,date_time FROM single_$sensor_id";
+if ($res = @$conn->query($sql)) {
+    $rows = $res->num_rows;
+    if ($rows > 0) {
+
+        $wiersz = mysqli_fetch_assoc($res);
+        echo ($wiersz['temp']);
+
+        $_SESSION['temp'] = $wiersz['temp'];
+        $_SESSION['hum'] = $wiersz['hum'];
+        $_SESSION['pres'] = $wiersz['pres'];
+
+
+        $res->free();
+        //exit();
+    } else {
+        echo "zero wierszy";
+        print_r($sqlResult);
+        exit();
+    }
+}else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    exit();
+}
+
+
+
+
 
 $dataPoints = array();
 $y = 40;
@@ -87,16 +141,17 @@ for ($i = 0; $i < 1000; $i++) {
     <?php
     include_once("components/comp_defpage.php");
     include_once("components/comp_charts.php");
+    
     ?>
 
 
 
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+    
 
 
     <?php require("components/footer.php"); ?>
 
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 

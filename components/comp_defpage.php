@@ -15,17 +15,17 @@
             <div class="card">
                 <div class="measure-card rounded-3 p-3 m-2">
                     <span class=" d-block h4 measure-name ">Temperature </span>
-                    <span class=" d-block h3">32</span>
+                    <span class=" d-block h3"><?php $_SESSION['temp'] ?></span>
                 </div>
 
                 <div class="measure-card rounded-3  p-3 m-2 myCard">
                     <span class=" d-block h4 measure-name">Humidity </span>
-                    <span class=" d-block h3">88</span>
+                    <span class=" d-block h3"><?php $_SESSION['hum'] ?></span>
                 </div>
 
                 <div class="measure-card rounded-3  p-3 m-2">
                     <span class=" d-block h4 measure-name">Pressure </span>
-                    <span class=" d-block h3">1122</span>
+                    <span class=" d-block h3"><?php $_SESSION['pres'] ?></span>
                 </div>
 
 
