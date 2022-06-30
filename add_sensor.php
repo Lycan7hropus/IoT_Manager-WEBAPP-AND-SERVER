@@ -45,16 +45,6 @@ $sqlResult = $conn->query($sql);
         include "components/comp_main.php";
      
 
-        if ($sqlResult->num_rows > 0) {
-  
-            while($row = $sqlResult->fetch_assoc()) {
-                print_r($row);
-            }
-          
-        } else {
-          echo "0 results";
-          
-        }
 
 
     ?>

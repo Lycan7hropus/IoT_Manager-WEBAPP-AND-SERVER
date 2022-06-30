@@ -1,47 +1,49 @@
 <div class="row justify-content-center">
 
-    <div class="col-md-4 col-lg-2 bg-success d-none d-md-inline">
-        <div class="bg-primary p-1">
+    <div class="col-md-4 col-lg-2 d-none d-md-inline ">
+        <div class="shadow h-100 py-5">
             <div class="measure-card p-3">
                 
-                <span class=" d-block h3">Konto</span>
+                <span class=" d-block h3">Account settings</span>
             </div>
             <div class="measure-card p-3 ">
                 
-                <span class=" d-block h3">Ustawienia czujnika</span>
+                <span class=" d-block h3">Sensors</span>
             </div>
             <div class="measure-card p-3 ">
                 
-                <span class=" d-block h3">Wyloguj</span>
+                <span class=" d-block h3">#</span>
             </div>
             <div class="measure-card p-3 ">
                 
-                <span class=" d-block h3">88</span>
+                <span class=" d-block h3">#</span>
             </div>
             <div class="measure-card p-3 ">
                
-                <span class=" d-block h3">88</span>
+                <span class=" d-block h3">#</span>
             </div>
         </div>
     </div>
 
     <div class="col p-2 d-md-none">
-        <div class=" bg-success mx-3">
+        <div class="mx-3">
             <div class="dropdown">
-                <button class="dropbtn">Konto</button>
+                <button class="dropbtn">More options</button>
                 <div class="dropdown-content">
-                    <a href="#">Ustawienia czujnika</a>
-                    <a href="#">Wyloguj</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Account settings</a>
+                    <a href="#">Sensors</a>
+                    <a href="#">#</a>
+                    <a href="#">#</a>
+                    <a href="#">#</a>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="col-11 col-md-8 p-2 p-md-4 h-100 bg-primary">
-        <div class="card">
-            <div class="rounded-3 p-3 m-2">
+    <div class="col-11 col-md-8 p-2 p-md-4 h-100 ">
+        <div class="">
+            <div class="rounded-3 p-3 m-2 shadow">
                 <h1>Account settings</h1>
                 <form method="post" class="mt-5" action="includes/register_action.php">
                     <div class="row">
