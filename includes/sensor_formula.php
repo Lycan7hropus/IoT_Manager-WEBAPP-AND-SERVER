@@ -8,8 +8,4 @@
         header('Location: ../readings_page.php');
     }
 
-
-    
-    
-
 ?>

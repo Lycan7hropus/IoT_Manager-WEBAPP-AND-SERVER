@@ -1,3 +1,7 @@
+body{
+  height: 100%;
+  
+}
 .bg-header {
     background-color: rgb(32, 32, 32);
 
@@ -86,4 +90,19 @@
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {
     background-color: rgb(32, 32, 32);
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+  }
+
+  .myrow{
+    height: 100%;
+  }
+
+  .bg-main{
+    background-color: white;
   }

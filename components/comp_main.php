@@ -15,7 +15,7 @@
             <form method="post" class="mt-5" action="includes/sensor_formula.php">
                 <div class="py-5">
                     <div class="row justify-content-left">
-
+                        
                         <?php
 
                         if ($sqlResult->num_rows > 0) {

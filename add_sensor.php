@@ -38,15 +38,11 @@ $sqlResult = $conn->query($sql);
 
     <?php require("components/header_logged_in.php"); ?>
 
-    <div style="height: 100px;"></div>
+    <div style="height: 57px;"></div>
 
 
     <?php 
-        include "components/comp_main.php";
-     
-
-
-
+        include "components/comp_add_sensor.php";
     ?>
 
     <?php require("components/footer.php"); ?>
