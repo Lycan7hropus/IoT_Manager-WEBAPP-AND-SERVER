@@ -33,17 +33,17 @@ if (isset($result)) {
 
     // $sql = "INSERT INTO single_$result[sensor_id] (id, temp, hum, pres) VALUES (null,'0', '0', '0')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    // if ($conn->query($sql) === TRUE) {
+    //     echo "Record updated created successfully";
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . $conn->error;
+    // }
 
     
 }
 
 $conn->close();
-//header("Location: ../main.php");
+header("Location: ../main.php");
 exit();
 
 

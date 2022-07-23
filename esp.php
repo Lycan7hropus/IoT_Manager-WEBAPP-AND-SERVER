@@ -12,21 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $value3 = $_POST["value3"];
 
 
-    $sql = "UPDATE single_$sensor_id SET temp='$value1', hum='$value2', pres='$value3' WHERE id=1;";
+    //$sql = "UPDATE single_$sensor_id SET temp='$value1', hum='$value2', pres='$value3' WHERE id=1;";
     //$sql2 = "INSERT INTO $sensor_id (id, temp, hum, pres) VALUES (null,'$value1', '$value2', '$value3')";
     $sql2 = "INSERT INTO `$sensor_id` (`id`, `temp`, `hum`, `pres`) VALUES (NULL,'$value1', '$value2', '$value3')";
 
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record updated successfully 
-";
-    } else {
-        echo "Error: " . $sql . "
-" . $conn->error;
-    }
+//     if ($conn->query($sql) === TRUE) {
+//         echo "New record updated successfully 
+// ";
+//     } else {
+//         echo "Error: " . $sql . "
+// " . $conn->error;
+//     }
 
     if ($conn->query($sql2) === TRUE) {
-        echo "New record added successfully
+        echo "New record added successfully Teststring
 ";
     } else {
         echo "Error: " . $sql2 . "
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     echo "
-     
+    
     ";
 
     echo "sensor:  " . $sensor . "

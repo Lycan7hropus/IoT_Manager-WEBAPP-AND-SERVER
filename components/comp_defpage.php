@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-8 ">
             <h6><?php echo "Hello " . $_SESSION['user_login']; ?></h6>
-            <h1><?php echo $_SESSION['sensor_name']; ?> readings</h1>
+            <h1 id="sensor_name_id"><?php echo $_SESSION['sensor_name']; ?> readings</h1>
         </div>
     </div>
 
@@ -15,17 +15,17 @@
             <div class="card">
                 <div class="measure-card rounded-3 p-3 m-2">
                     <span class=" d-block h4 measure-name ">Temperature </span>
-                    <span class=" d-block h3"><?php echo $_SESSION['temp']; ?></span>
+                    <span class=" d-block h3" id="temp_span_id"><?php echo $_SESSION['temp']; ?></span>
                 </div>
 
                 <div class="measure-card rounded-3  p-3 m-2 myCard">
                     <span class=" d-block h4 measure-name">Humidity </span>
-                    <span class=" d-block h3"><?php echo $_SESSION['hum']; ?></span>
+                    <span class=" d-block h3" id="hum_span_id"><?php echo $_SESSION['hum']; ?></span>
                 </div>
 
                 <div class="measure-card rounded-3  p-3 m-2">
                     <span class=" d-block h4 measure-name">Pressure </span>
-                    <span class=" d-block h3"><?php echo $_SESSION['pres']; ?></span>
+                    <span class=" d-block h3" id="pres_span_id"><?php echo $_SESSION['pres']; ?></span>
                 </div>
 
 

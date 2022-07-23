@@ -1,4 +1,7 @@
 <?php
+
+echo "<br><br><br>";
+
 // START A SESSION AND INCLUDE DB
 session_start();
 include("config/dbconfig.php");
@@ -24,6 +27,7 @@ if ($sqlResult = $conn->query($sql)) {
         //print_r($wiersz);
         //exit();
         $sensor_id = $wiersz["sensor_id"];
+        $_SESSION["sensor_id"] = $sensor_id;
 
 
         $sqlResult->free();
@@ -74,23 +78,25 @@ if ($sqlResult = $conn->query($sql)) {
 //     array_push($dataPoints, array("x" => $i, "y" => $y));
 // }
 
+$sql = "SELECT DATE(date_time), HOUR(date_time), MIN(date_time), id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), HOUR(date_time);";
 
-$sql = "SELECT temp,hum,pres,date_time FROM `$sensor_id`";
+//$sql = "SELECT temp,hum,pres,date_time FROM `$sensor_id`";
 
 //SELECT ALL RECORDS
-$i = 0;
+
 $res = @$conn->query($sql);
-print_r($res);
+
 if ($res) {
+    echo $res->num_rows;
+
 
     while ($row = $res->fetch_assoc()) {
 
-        $i++;
         array_push($dataPointsTemp, array("x" => $row['date_time'], "y" => $row['temp']));
         array_push($dataPointsHum, array("x" => $row['date_time'], "y" => $row['hum']));
         array_push($dataPointsPres, array("x" => $row['date_time'], "y" => $row['pres']));
 
-
+        //echo $row["date_time"] ."<br>";
         echo "<br> " . $row['date_time'] . " " . $row['hum'];
     }
 } else {
@@ -98,7 +104,7 @@ if ($res) {
 }
 
 
-
+//exit();
 
 
 ?>
@@ -116,15 +122,123 @@ if ($res) {
 
 
     <script>
-        
         var myDataPointsTemp = [];
         var myDataPointsHum = [];
         var myDataPointsPres = [];
 
+        function myFun(perioid, readings_type) {
+
+            //alert(readings_type);
+            //alert(readings_type);
+            //alert("Hello\nHow are you?");
+
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("GET", "http://sandbox.ct8.pl/api/chart_data.php?q=" + <?php echo $sensor_id ?> + "&perioid=" + perioid + "&readings_type=" + readings_type, true);
+            xmlhttp.send();
+
+            //alert(perioid);
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    var jsonArray = JSON.parse(this.response);
+                   
+
+                    switch (readings_type) {
+                        case 'temp':
+                            myDataPointsTemp = [];
+
+                            for (var i = 0; i < jsonArray.length; i++) {
+                                myDataPointsTemp.push({
+                                    x: new Date(jsonArray[i].x),
+                                    y: jsonArray[i].y
+                                });
+                            }
+
+                            console.log(myDataPointsTemp);
+
+                            createChart("Temp", myDataPointsTemp);
+                            //alert("Temp");
+                            break;
+                    
+                        case 'hum':
+                            myDataPointsHum = [];
+
+                            for (var i = 0; i < jsonArray.length; i++) {
+                                myDataPointsHum.push({
+                                    x: new Date(jsonArray[i].x),
+                                    y: jsonArray[i].y
+                                });
+                            }
+
+                            console.log(myDataPointsHum);
+
+                            createChart("Hum", myDataPointsHum);
+                            //alert("Hum");
+                            break;
+
+
+                        case 'pres':
+                            myDataPointsPres = [];
+
+                            for (var i = 0; i < jsonArray.length; i++) {
+                                myDataPointsPres.push({
+                                    x: new Date(jsonArray[i].x),
+                                    y: jsonArray[i].y
+                                });
+                            }
+
+                            console.log(myDataPointsPres);
+
+                            createChart("Pres", myDataPointsPres);
+                            //alert("Pres");
+                            break;
+                        default:
+                            alert("sth is wrong");
+                    }
+
+                   
+                    ; 
+
+
+
+
+
+                } else {
+
+                    //alert("ready state: " + this.readyState + ", status: " + this.status);
+
+                }
+
+
+            }
+        }
+
+        function readingsUpdate(type) {
+
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("GET", "http://sandbox.ct8.pl/api/last_measure.php?q=" + <?php echo $sensor_id ?> + "&type=" + type, true);
+            xmlhttp.send();
+
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById(type + "_span_id").innerHTML = this.responseText;
+                } else {
+                    //document.getElementById(type_id).innerHTML = "ready state: " + this.readyState + ", status: " + this.status;
+
+                }
+            };
+            setTimeout(() => readingsUpdate(type), 1000)
+
+        }
+
         function parseDate(type) {
             if (type == 1) {
 
-                var phpDataPoints = <?php echo json_encode($dataPointsTemp, JSON_NUMERIC_CHECK); ?>
+                var phpDataPoints = <?php echo json_encode($dataPointsTemp, JSON_NUMERIC_CHECK); ?>;
 
                 for (var i = 0; i < phpDataPoints.length; i++) {
                     myDataPointsTemp.push({
@@ -132,10 +246,10 @@ if ($res) {
                         y: phpDataPoints[i].y
                     });
                 }
-                
+
 
             } else if (type == 2) {
-                var phpDataPoints = <?php echo json_encode($dataPointsHum, JSON_NUMERIC_CHECK); ?>
+                var phpDataPoints = <?php echo json_encode($dataPointsHum, JSON_NUMERIC_CHECK); ?>;
 
                 for (var i = 0; i < phpDataPoints.length; i++) {
                     myDataPointsHum.push({
@@ -143,8 +257,8 @@ if ($res) {
                         y: phpDataPoints[i].y
                     });
                 }
-            } else if (type == 3){
-                var phpDataPoints = <?php echo json_encode($dataPointsHum, JSON_NUMERIC_CHECK); ?>
+            } else if (type == 3) {
+                var phpDataPoints = <?php echo json_encode($dataPointsPres, JSON_NUMERIC_CHECK); ?>;
 
                 for (var i = 0; i < phpDataPoints.length; i++) {
                     myDataPointsPres.push({
@@ -156,23 +270,61 @@ if ($res) {
 
         }
 
-        window.onload = function() {
+        function createChart(chart_type, dataPointsType) {
 
-            // ------------------------------ TEMPERATURE CHART ------------------------------
-            parseDate(1);
-            var tenp_chart = new CanvasJS.Chart("chartContainerTemp", {
+
+            var chart = new CanvasJS.Chart("chartContainer" + chart_type, {
                 theme: "light2", // "light1", "light2", "dark1", "dark2"
                 animationEnabled: true,
                 zoomEnabled: true,
                 title: {
-                    text: "Temperature chart"
+                    text: chart_type + " chart"
                 },
                 data: [{
                     type: "area",
-                    dataPoints: myDataPointsTemp
+                    dataPoints: dataPointsType
                 }]
             });
-            tenp_chart.render();
+
+            chart.render();
+
+
+        }
+
+        window.onload = function() {
+
+
+            //setup active buttons
+            document.getElementById("option1t").checked = true;
+            document.getElementById("option1h").checked = true;
+            document.getElementById("option1p").checked = true;
+           
+
+            
+
+            readingsUpdate("temp"); // method to be executed;
+            readingsUpdate("hum"); // method to be executed;
+            readingsUpdate("pres"); // method to be executed;
+
+            // ------------------------------ TEMPERATURE CHART ------------------------------
+            //parseDate(1);
+            // var temp_chart = new CanvasJS.Chart("chartContainerTemp", {
+            //     theme: "light2", // "light1", "light2", "dark1", "dark2"
+            //     animationEnabled: true,
+            //     zoomEnabled: true,
+            //     title: {
+            //         text: "Temperature chart"
+            //     },
+            //     data: [{
+            //         type: "area",
+            //         dataPoints: myDataPointsTemp
+            //     }]
+            // });
+
+            // temp_chart.render();
+
+            parseDate(1);
+            createChart("Temp", myDataPointsTemp);
 
             // ------------------------------ HUMIDTY CHART ------------------------------
 
@@ -207,6 +359,8 @@ if ($res) {
             });
             pres_chart.render();
 
+
+
         }
     </script>
 
@@ -214,7 +368,8 @@ if ($res) {
 
 <body>
 
-    <?php require("components/header_logged_in.php"); ?>
+    <?php require("components/header_logged_in.php"); 
+    ?>
 
     <div style="height: 100px;"></div>
 
