@@ -28,50 +28,55 @@ if (isset($_SESSION['logged_in'])) {
     require("components/header.php");
     ?>
 
-    <main>
-        <div class="row justify-content-center mx-3">
-            <div class="col-6 ">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <h1 class="mt-5 mb-3 text-center ">Check our android app</h1>
+
+    <div class="content">
+        <main>
+        <div style="height: 50px;">xxx</div>
+            <div class="row justify-content-center w-100" id="row_login_page_01">
+            
+                <div class="col-6 ">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1 class="mt-5 mb-3 text-center ">Check our android app</h1>
+                        </div>
                     </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6"><img src="img/smartphone-g3fbe85d98_1280.png" alt="" class="  img-fluid pb-5"></div>
+                    </div>
+
+
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-6"><img src="img/smartphone-g3fbe85d98_1280.png" alt="" class="  img-fluid pb-5"></div>
+
+                <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 bg-light p-3 shadow">
+                    <h1>Login</h1>
+
+                    <form method="post" class="mt-5" action="includes/login_action.php">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="login_input" name="login" class="form-control" />
+                            <label class="form-label" for="email">Login</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="pass_input" name="pass" class="form-control" />
+                            <label class="form-label" for="pass">Password</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <input type="submit" id="submit_input" name="submit" value="Sign in" class="btn btn-dark btn-block mb-4">
+
+                        <!-- Register -->
+                        <div class="text-center">
+                            <p>Not a member? <a href="register.php">Register</a></p>
+                        </div>
+
+                    </form>
                 </div>
 
 
-            </div>
-
-            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 bg-light p-3 shadow">
-                <h1>Login</h1>
-
-                <form method="post" class="mt-5" action="includes/login_action.php">
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="login_input" name="login" class="form-control" />
-                        <label class="form-label" for="email">Login</label>
-                    </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" id="pass_input" name="pass" class="form-control" />
-                        <label class="form-label" for="pass">Password</label>
-                    </div>
-
-                    <!-- Submit button -->
-                    <input type="submit" id="submit_input" name="submit" value="Sign in" class="btn btn-dark btn-block mb-4">
-
-                    <!-- Register -->
-                    <div class="text-center">
-                        <p>Not a member? <a href="register.php">Register</a></p>
-                    </div>
-
-                </form>
-            </div>
-
-
-    </main>
+        </main>
+    </div>
 
 
 

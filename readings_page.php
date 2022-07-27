@@ -78,7 +78,9 @@ if ($sqlResult = $conn->query($sql)) {
 //     array_push($dataPoints, array("x" => $i, "y" => $y));
 // }
 
-$sql = "SELECT DATE(date_time), HOUR(date_time), MIN(date_time), id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), HOUR(date_time);";
+//$sql = "SELECT DATE(date_time), HOUR(date_time), MINUTE(date_time), id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), HOUR(date_time);";
+//$sql = "SELECT id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), HOUR(date_time);";
+$sql = "SELECT id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), HOUR(date_time), MINUTE(date_time) DIV 4 ORDER BY date_time DESC LIMIT 360";
 
 //$sql = "SELECT temp,hum,pres,date_time FROM `$sensor_id`";
 
@@ -87,7 +89,7 @@ $sql = "SELECT DATE(date_time), HOUR(date_time), MIN(date_time), id, temp, hum, 
 $res = @$conn->query($sql);
 
 if ($res) {
-    echo $res->num_rows;
+    //echo $res->num_rows;
 
 
     while ($row = $res->fetch_assoc()) {
@@ -97,7 +99,7 @@ if ($res) {
         array_push($dataPointsPres, array("x" => $row['date_time'], "y" => $row['pres']));
 
         //echo $row["date_time"] ."<br>";
-        echo "<br> " . $row['date_time'] . " " . $row['hum'];
+        //echo "<br> " . $row['date_time'] . " " . $row['hum'];
     }
 } else {
     echo "0.. results";
@@ -143,7 +145,7 @@ if ($res) {
                 if (this.readyState == 4 && this.status == 200) {
 
                     var jsonArray = JSON.parse(this.response);
-                   
+
 
                     switch (readings_type) {
                         case 'temp':
@@ -161,7 +163,7 @@ if ($res) {
                             createChart("Temp", myDataPointsTemp);
                             //alert("Temp");
                             break;
-                    
+
                         case 'hum':
                             myDataPointsHum = [];
 
@@ -198,8 +200,8 @@ if ($res) {
                             alert("sth is wrong");
                     }
 
-                   
-                    ; 
+
+                    ;
 
 
 
@@ -295,12 +297,12 @@ if ($res) {
 
 
             //setup active buttons
-            document.getElementById("option1t").checked = true;
-            document.getElementById("option1h").checked = true;
-            document.getElementById("option1p").checked = true;
-           
+            document.getElementById("option2t").checked = true;
+            document.getElementById("option2h").checked = true;
+            document.getElementById("option2p").checked = true;
 
-            
+
+
 
             readingsUpdate("temp"); // method to be executed;
             readingsUpdate("hum"); // method to be executed;
@@ -368,27 +370,29 @@ if ($res) {
 
 <body>
 
-    <?php require("components/header_logged_in.php"); 
+    <?php require("components/header_logged_in.php");
     ?>
 
-    <div style="height: 100px;"></div>
+    <div class="content">
+
+        <?php
+        include_once("components/comp_defpage.php");
+        include_once("components/comp_charts.php");
+        include_once("components/footer.php");
+        ?>
+        
+    </div>
 
 
-    <?php
-    include_once("components/comp_defpage.php");
-    include_once("components/comp_charts.php");
-
-    ?>
 
 
 
 
 
 
-    <?php require("components/footer.php"); ?>
-
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
+
 
 </html>

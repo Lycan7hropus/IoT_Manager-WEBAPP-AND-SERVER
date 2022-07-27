@@ -1,7 +1,4 @@
-body{
-  height: 100%;
-  
-}
+
 .bg-header {
     background-color: rgb(32, 32, 32);
 
@@ -92,17 +89,30 @@ body{
     background-color: rgb(32, 32, 32);
   }
 
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
-  }
-
   .myrow{
     height: 100%;
   }
 
   .bg-main{
     background-color: white;
+  }
+
+  .content {
+    min-height: calc(100vh - 50px);
+    width: 100%;
+  }
+  footer {
+    line-height: 50px;
+  }
+  .navbar{
+    width: 100%;
+  }
+
+  .row{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  #row_login_page_01{
+    min-height: calc(100vh - 100px);
   }

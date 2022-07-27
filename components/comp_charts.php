@@ -8,13 +8,13 @@
                     <input type="radio" class="btn-check" name="temp" id="option1t" autocomplete="off" onclick="myFun('HOUR','temp')">
                     <label class="btn btn-outline-secondary" for="option1t">1H</label>
 
-                    <input type="radio" class="btn-check" name="temp" id="option2t" autocomplete="off" onclick="myFun('MINUTE','temp')">
+                    <input type="radio" class="btn-check" name="temp" id="option2t" autocomplete="off" onclick="myFun('DAY','temp')">
                     <label class="btn btn-outline-secondary" for="option2t">24H</label>
 
-                    <input type="radio" class="btn-check" name="temp" id="option3t" autocomplete="off" onclick="myFun('MINUTE','temp')">
+                    <input type="radio" class="btn-check" name="temp" id="option3t" autocomplete="off" onclick="myFun('WEEK','temp')">
                     <label class="btn btn-outline-secondary" for="option3t">1W</label>
 
-                    <input type="radio" class="btn-check" name="temp" id="option4t" autocomplete="off" onclick="myFun('MINUTE','temp')">
+                    <input type="radio" class="btn-check" name="temp" id="option4t" autocomplete="off" onclick="myFun('MONTH','temp')">
                     <label class="btn  btn-outline-secondary" for="option4t">1M</label>
                 </div>
             </div>
@@ -30,13 +30,13 @@
                     <input type="radio" class="btn-check" name="hum" id="option1h" autocomplete="off" onclick="myFun('HOUR','hum',)">
                     <label class="btn btn-outline-secondary" for="option1h">1H</label>
 
-                    <input type="radio" class="btn-check" name="hum" id="option2h" autocomplete="off" onclick="myFun('MINUTE','hum')">
+                    <input type="radio" class="btn-check" name="hum" id="option2h" autocomplete="off" onclick="myFun('DAY','hum')">
                     <label class="btn btn-outline-secondary" for="option2h">24H</label>
 
-                    <input type="radio" class="btn-check" name="hum" id="option3h" autocomplete="off" onclick="myFun('MINUTE','hum')">
+                    <input type="radio" class="btn-check" name="hum" id="option3h" autocomplete="off" onclick="myFun('WEEK','hum')">
                     <label class="btn btn-outline-secondary" for="option3h">1W</label>
 
-                    <input type="radio" class="btn-check" name="hum" id="option4h" autocomplete="off" onclick="myFun('MINUTE','hum')">
+                    <input type="radio" class="btn-check" name="hum" id="option4h" autocomplete="off" onclick="myFun('MONTH','hum')">
                     <label class="btn  btn-outline-secondary" for="option4h">1M</label>
                 </div>
             </div>
@@ -54,13 +54,13 @@
                         <input type="radio" class="btn-check" name="pres" id="option1p" autocomplete="off" onclick="myFun('HOUR','pres')">
                         <label class="btn btn-outline-secondary" for="option1p">1H</label>
 
-                        <input type="radio" class="btn-check" name="pres" id="option2p" autocomplete="off" onclick="myFun('MINUTE','pres')">
+                        <input type="radio" class="btn-check" name="pres" id="option2p" autocomplete="off" onclick="myFun('DAY','pres')">
                         <label class="btn btn-outline-secondary" for="option2p">24H</label>
 
-                        <input type="radio" class="btn-check" name="pres" id="option3p" autocomplete="off" onclick="myFun('SECOND','pres')">
+                        <input type="radio" class="btn-check" name="pres" id="option3p" autocomplete="off" onclick="myFun('WEEK','pres')">
                         <label class="btn btn-outline-secondary" for="option3p">1W</label>
 
-                        <input type="radio" class="btn-check" name="pres" id="option4p" autocomplete="off" onclick="myFun('MINUTE','pres')">
+                        <input type="radio" class="btn-check" name="pres" id="option4p" autocomplete="off" onclick="myFun('MONTH','pres')">
                         <label class="btn  btn-outline-secondary" for="option4p">1M</label>
                     </div>
 

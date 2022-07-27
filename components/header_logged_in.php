@@ -1,5 +1,5 @@
-    <nav class="navbar navbar-expand-lg bg-header fixed-top navbar-dark">
-        <div class="container-fluid mx-3">
+    <nav class="navbar navbar-expand-lg bg-header fixed-top navbar-dark w-100">
+        <div class="container-fluid mx-3 ">
             <a class="navbar-brand" href="main.php">
                 <img width="30" class="d-inline-block align-text-top me-3 " src="img/SecureSuite-Icon-Logo-1-3330.png" alt="">IOT Manger
             </a>

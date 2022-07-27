@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     }
 
     if ($conn->query($sql2) === TRUE) {
-        echo "New record added successfully Teststring
+        echo "New record added successfully
 ";
     } else {
         echo "Error: " . $sql2 . "
