@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION['logged_in'])) {
     echo "sign in first!";
+    header('Location: login.php');
     exit();
 }
 
@@ -43,6 +44,7 @@ $sqlResult = $conn->query($sql);
 
         <?php
         include "components/comp_main.php";
+    
        
         ?>
 

@@ -46,6 +46,14 @@
 
                     </div>
                 </div>
+                <?php 
+                
+                if(isset($_SESSION["ans_action"])){
+                    echo "<p class='text-danger'>".$_SESSION["ans_action"]."</p>";
+                    unset($_SESSION["ans_action"]);
+                }
+                
+                ?>
         </div>
 
         </form>
