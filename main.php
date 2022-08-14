@@ -13,7 +13,7 @@ include("config/dbconfig.php");
 
 $login = $_SESSION['user_login'];
 
-$sql = "SELECT sensor_name, sensor_id FROM sensors WHERE user_login='$login'";
+$sql = "SELECT sensor_name, sensor_id, is_owner FROM sensors WHERE user_login='$login'";
 
 $sqlResult = $conn->query($sql);
 

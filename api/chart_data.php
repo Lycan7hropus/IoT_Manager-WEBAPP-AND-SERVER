@@ -6,6 +6,9 @@ $type = $_GET['type'];
 $perioid = $_GET['perioid'];
 $readings_type = $_GET['readings_type'];
 
+//echo "q = " . $table_name. " type = " . $type . " perioid = " . $perioid . " rt = " . $readings_type;
+
+
 session_start();
 include("../config/dbconfig.php");
 $json_array = array();

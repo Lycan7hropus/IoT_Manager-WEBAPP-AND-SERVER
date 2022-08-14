@@ -37,7 +37,7 @@ if ($sqlResult = $conn->query($sql)) {
 /// ---------------------------- do wywalenia ----------------------------\\\
 
 
-$sql = "SELECT DATE(date_time), HOUR(date_time), MIN(date_time), id, temp, hum, pres, date_time FROM `$sensor_id` GROUP BY DATE(date_time), MINUTE(date_time) DIV 4;";
+$sql = "SELECT DATE(date_time), HOUR(date_time), MIN(date_time), id, temp, hum, pres, date_time FROM `1674198` GROUP BY DATE(date_time), MINUTE(date_time) DIV 4;";
 $sql = "SELECT temp,hum,pres,date_time FROM `$sensor_id`";
 
 if ($res = @$conn->query($sql)) {

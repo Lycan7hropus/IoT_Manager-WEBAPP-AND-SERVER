@@ -21,11 +21,16 @@
                         if ($sqlResult->num_rows > 0) {
 
                             while ($row = $sqlResult->fetch_assoc()) {
+                                
                                 echo
                                 '<div class="col-11 col-md-8 col-lg-4 my-2">
                                     <div class="card h-100">
                                         <button name="mysubmitbutton" id="mysubmitbutton" type="submit" class="measure-card rounded-3 p-3 m-2 h-100 border-0 text-start" value="' . $row['sensor_name'] . '">
-                                        <span class="d-block h3">' . $row['sensor_name'] . '</span>
+                                        <span class="d-inline h3">' . $row['sensor_name'] . '</span>';
+                                        if($row['is_owner']){
+                                            echo '<img class=" float-end"  src="../img/admin_iot.png" alt="">';
+                                        }
+                                 echo '       
                                     </button>
                                 </div>
                                 </div>';
@@ -39,7 +44,8 @@
                         <div class="col-11 col-md-8 col-lg-4 my-2">
                             <div class="card h-100">
                                 <button name="mysubmitbutton" id="mysubmitbutton" type="submit" class="measure-card rounded-3 p-3 m-2 h-100 border-0 text-start" value="new_sensor">
-                                    <span class="d-block h3">Add new sensor</span>
+                                    <span class="d-inline h3 ">Add new sensor</span>
+                                    
                                 </button>
                             </div>
                         </div>
