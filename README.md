@@ -53,7 +53,7 @@ To add a sensor to an account, enter the id of the esp chip (more you can find h
 
 <h2> GRPAH PAGE </h2>
 
-Page with measurements, for data presentation I used charts from the https://canvasjs.com/ website.
+Charts from the https://canvasjs.com/ website are used to present the data.
 You can view data from different periods, there are also displayed last meusurments which refresh everey 10 seconds. 
 ![image](https://user-images.githubusercontent.com/83671766/189493891-0c5b23f1-b664-4b80-a30a-0c9e0e1b0c19.png)
 ![image](https://user-images.githubusercontent.com/83671766/189494641-b2ce0da6-3b9f-4cdd-9cda-203f44305971.png)
