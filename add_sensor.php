@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['logged_in'])){
- echo "sign in first!";
- exit();   
+if (!isset($_SESSION['logged_in'])) {
+    echo "sign in first!";
+    exit();
 }
 
 
@@ -36,14 +36,17 @@ $sqlResult = $conn->query($sql);
 
 <body>
 
+
     <?php require("components/header_logged_in.php"); ?>
 
-    <div style="height: 57px;"></div>
 
+    <div class="content">
+        <div style="height: 57px;"></div>
 
-    <?php 
+        <?php
         include "components/comp_add_sensor.php";
-    ?>
+        ?>
+    </div>
 
     <?php require("components/footer.php"); ?>
 

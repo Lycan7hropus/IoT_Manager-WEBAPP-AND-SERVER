@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link " aria-current="page" href="user_settings.php">User Settings</a>
-                    <a class="nav-link " href="../features.php">Features</a>
+                    <!-- <a class="nav-link " href="../features.php">Features</a> -->
                     <a class="nav-link" href="includes/logout.php">Logout</a>
                 </div>
             </div>
