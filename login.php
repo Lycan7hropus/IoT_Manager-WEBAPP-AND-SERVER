@@ -37,11 +37,12 @@ if (isset($_SESSION['logged_in'])) {
                 <div class="col-6 ">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <h1 class="mt-5 mb-3 text-center ">Check our android app</h1>
+                            
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-6"><img src="img/smartphone-g3fbe85d98_1280.png" alt="" class="  img-fluid pb-5"></div>
+                    <h1 class="mt-5 mb-3 text-center ">Check our android app</h1>
+                        <div class="col-6 " style=""><img src="img/android_app.png" alt="" class="  img-fluid pb-5"></div>
                     </div>
 
 

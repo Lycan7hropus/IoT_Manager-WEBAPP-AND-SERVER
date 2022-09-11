@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center w-100">
     <div class="col-11 col-md-8 p-2 p-md-4 shadow ">
         <div class="">
             <div class="rounded-3 p-3 m-2">

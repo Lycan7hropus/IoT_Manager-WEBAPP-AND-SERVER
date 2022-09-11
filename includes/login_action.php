@@ -31,7 +31,7 @@ if (isset($result)) {
                             
             }
             else{
-                //header("Location: index.php?mess=Wrong");
+                header("Location: ../index.php?mess=Wrong");
                 echo "dane nie poprawne";
                 exit();
                 
