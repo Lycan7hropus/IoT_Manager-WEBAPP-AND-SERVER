@@ -12,6 +12,9 @@ ANDROID APP: https://github.com/HomoLupus/iotManagerMobile
 ESP: https://github.com/HomoLupus/espHttpClient
 <br><br>
 
+![image](https://user-images.githubusercontent.com/83671766/189609027-474e9bb2-c7d8-4447-9c4e-16f9a457451a.png)
+
+<h1> WEBAPP </h1>
 
 General app capabilities:
 
@@ -22,7 +25,6 @@ General app capabilities:
   <li>removing the sensor from the account</li>
   <li>reading measurements from sensors</li>
 </ul>
-
 
 <h2> LOGIN PAGE </h2>
 To check how the web application works, go to the http://sandbox.ct8.pl/main.php
