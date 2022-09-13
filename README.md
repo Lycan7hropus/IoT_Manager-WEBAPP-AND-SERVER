@@ -27,12 +27,7 @@ General app capabilities:
 </ul>
 
 <h2> LOGIN PAGE </h2>
-To check how the web application works, go to the http://sandbox.ct8.pl/main.php
-and use this credentials to log in:
-<ul>
-  <li>Login: HomoLupus</li>
-  <li>Password: 12345</li>
-</ul>
+
 
 ![image](https://user-images.githubusercontent.com/83671766/189491663-7d95f72c-05ce-4d05-b5f1-b014e88eb69d.png)
 <br><br>
