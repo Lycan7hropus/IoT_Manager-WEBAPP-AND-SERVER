@@ -1,6 +1,6 @@
 
 <h2> INTRODUCTION </h2>
-<h3>  The application may contain bugs and imperfections because work on this project is still ongoing!</h3> 
+
 
 
 PHP / JS / BOOTSTRAP / MYSQL was used to create this project.
