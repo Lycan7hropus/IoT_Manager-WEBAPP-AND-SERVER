@@ -4,7 +4,6 @@
 
 
 PHP / JS / BOOTSTRAP / MYSQL was used to create this project.
-First time when I have worked with those technologies. <br>
 In addition to the web application, this project also includes an Android application (it communicates with the server using REST API) and esp8266 which read data from the sensor and send it to the server.
 <br><br>
 ANDROID APP: https://github.com/HomoLupus/iotManagerMobile
